@@ -1,6 +1,6 @@
 /*
    ToDo 
-   Commit to github
+   Commit to github and see how it works
    Update tick marks based on time since last Reset
    Finish the Farenheit Option so it makes sense
    Check to make sure HEATER is off when probe disconnected i.e. when reading is a NaN
