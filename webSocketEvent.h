@@ -34,7 +34,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
       Serial.println();
       String spayload = (char*)payload;
       Serial.println(spayload);
-      if (payload[0] == BUTTON_PREAMPLE_SQ) //we have a button
+      if (payload[0] == BUTTON_PREAMPLE[0]) //we have a button
       {
         String id = spayload.substring(1, spayload.indexOf(',')) ;
         Serial.print("id :");
@@ -91,7 +91,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
         if (id == "idReset")
         {
           sm = standby;
-
+          //sendPIDData();  //i want to do this but the loop still needs to update the variable
           //heating_stage = stage1;
         }
 
@@ -105,7 +105,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
         }
 
       }
-      if (payload[0] == STRING_PREAMBLE_SQ )//'@')//STRING_PREAMBLE') //we have a string
+      if (payload[0] == STRING_PREAMBLE[0])//STRING_PREAMBLE_SQ )//'@')//STRING_PREAMBLE') //we have a string
       {
         float f = (spayload.substring(spayload.indexOf(',') + 1, spayload.length())).toFloat();
         String arrfieldsinput[] = {"sp1", "sp2", "sp1td", "sp2td", "kp", "ki", "kd", "mvmax", "mvmin", "cal"};

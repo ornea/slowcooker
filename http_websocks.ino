@@ -131,13 +131,13 @@ void handle_pid_websockets() {
                        "}else{"
                        "document.getElementById('idinput'+ID).value=posVal;"
                        "}"
-                       "var pidupdate='"STRING_PREAMBLE_DQ"'+ID+','+posVal;console.log('pidupdate:'+pidupdate);"
+                       "var pidupdate='"  STRING_PREAMBLE "'+ID+','+posVal;console.log('pidupdate:'+pidupdate);"
                        "connection.send(pidupdate);"
                        "}"
 
                        //Send the button presses based on ID
                        "function sendbuttons(ID) {"
-                       "var pidupdate='"BUTTON_PREAMPLE_DQ"'+ID+',button';" //,'+document.getElementById('idrange'+ID).value;console.log('pidupdate:'+pidupdate);"
+                       "var pidupdate='"BUTTON_PREAMPLE"'+ID+',button';" //,'+document.getElementById('idrange'+ID).value;console.log('pidupdate:'+pidupdate);"
                        "connection.send(pidupdate);"
                        "}"
 
@@ -156,8 +156,8 @@ void handle_pid_websockets() {
                        "document.getElementById('idrange'+kv[0]).value = kv[1];"
                        "document.getElementById('idinput'+kv[0]).value = kv[1];"
                        "}"
-                       "console.log('pidupdate:'+'"STRING_PREAMBLE_DQ"'+kv[0]+','+kv[1]);"
-                       "connection.send('"STRING_PREAMBLE_DQ"'+kv[0]+','+kv[1]);"
+                       "console.log('pidupdate:'+'"STRING_PREAMBLE"'+kv[0]+','+kv[1]);"
+                       "connection.send('"STRING_PREAMBLE"'+kv[0]+','+kv[1]);"
                        "}"
                        "}"
 
@@ -301,7 +301,7 @@ void handle_pid_websockets() {
                        "else if(msg=='"INVERTED"'){document.getElementById('idActive').value='"INVERTED"';}"
                        "else if(msg=='"NONINVERTED"'){document.getElementById('idActive').value='"NONINVERTED"';}"
 
-                       "else if(msg.indexOf('"PID_DATA_PREAMBLE_DQ"') == 0){"
+                       "else if(msg.indexOf('"PID_DATA_PREAMBLE"') == 0){"
                        "msg = msg.slice(1);"
                        "var arrmsg=msg.split(','),ticks=parseInt(arrmsg[0]), PV=parseFloat(arrmsg[1]), error=parseFloat(arrmsg[2]), pTerm=parseFloat(arrmsg[3]), iTerm=parseFloat(arrmsg[4]), dTerm=parseFloat(arrmsg[5]), CV=parseInt(arrmsg[6]), millis_t=arrmsg[7], currentHumidity=parseFloat(arrmsg[8]), strstate=arrmsg[9], countdowntimer=arrmsg[10];"
                        //"var ticks, currentHeat, error, pTerm, iTerm, dTerm, CV, millis_t, currentHumidity, strstate, countdowntimer=msg.split(',');"

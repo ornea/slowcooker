@@ -205,11 +205,11 @@ void sendPIDData(void)
   char buffers [200];
   if (AppConfig.Flags.bIsCelsius == TRUE)
   {
-    sprintf(buffers, PID_DATA_PREAMBLE_DQ" % 09d , % 06.2f , % 06.2f , % 06.2f  , % 06.2f , % 06.2f , % 03d , % 09d , % 06.2f, % s,% 9d", ticks, currentHeat, error, pTerm, iTerm, dTerm, CV, millis(), currentHumidity, strstate.c_str(), countdowntimer / INTERVAL_1_SEC );
+    sprintf(buffers, PID_DATA_PREAMBLE" % 09d , % 06.2f , % 06.2f , % 06.2f  , % 06.2f , % 06.2f , % 03d , % 09d , % 06.2f, % s,% 9d", ticks, currentHeat, error, pTerm, iTerm, dTerm, CV, millis(), currentHumidity, strstate.c_str(), countdowntimer / INTERVAL_1_SEC );
   }
   else
   {
-    sprintf(buffers, PID_DATA_PREAMBLE_DQ" % 09d , % 06.2f , % 06.2f , % 06.2f  , % 06.2f , % 06.2f , % 03d , % 09d , % 06.2f, % s,% 9d", ticks, degf(currentHeat), degf(error), degf(pTerm), degf(iTerm), degf(dTerm), degf(CV), millis(), currentHumidity, strstate.c_str(), countdowntimer / INTERVAL_1_SEC );
+    sprintf(buffers, PID_DATA_PREAMBLE" % 09d , % 06.2f , % 06.2f , % 06.2f  , % 06.2f , % 06.2f , % 03d , % 09d , % 06.2f, % s,% 9d", ticks, degf(currentHeat), degf(error), degf(pTerm), degf(iTerm), degf(dTerm), degf(CV), millis(), currentHumidity, strstate.c_str(), countdowntimer / INTERVAL_1_SEC );
   }
   webSocket.broadcastTXT(buffers);
 }

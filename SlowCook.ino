@@ -1,6 +1,5 @@
 /*
-   ToDo 
-   Commit to github and see how it works
+   ToDo
    Update tick marks based on time since last Reset
    Finish the Farenheit Option so it makes sense
    Check to make sure HEATER is off when probe disconnected i.e. when reading is a NaN
@@ -115,14 +114,11 @@
 #define ISHEATERHIGH digitalRead(HEATER)
 #define degf(C)  ((C*9/5)+32)//(0°C × 9/5) + 32 = 32°F
 
-#define BUTTON_PREAMPLE_DQ "*"
-#define BUTTON_PREAMPLE_SQ '*'
+#define BUTTON_PREAMPLE "*"
 
-#define STRING_PREAMBLE_DQ "@"
-#define STRING_PREAMBLE_SQ '@'
+#define STRING_PREAMBLE "@"
 
-#define PID_DATA_PREAMBLE_DQ "&"
-#define PID_DATA_PREAMBLE_SQ '&'
+#define PID_DATA_PREAMBLE "&"
 
 #define TRUE true
 #define FALSE false

@@ -24,7 +24,7 @@ void handle_pid_data_only()
                        "connection.onmessage=function(e){console.log('Server: ',e.data);"
 
                        "var msg=e.data;"
-                       "if(msg.indexOf('"PID_DATA_PREAMBLE_DQ"') == 0){" //is the first char the preamble
+                       "if(msg.indexOf('"PID_DATA_PREAMBLE"') == 0){" //is the first char the preamble
                        "msg = msg.slice(1);"
                        "var arrmsg=msg.split(',');"
                        "var elements=document.getElementById('arrfieldoutputvalues');"
